@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Game from './Game';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    render() {
+
+        return (
+            <div className="App">
+                <ul className="list pl0 code">
+                    <li > Any live cell with fewer than two live neighbors dies, as if by underpopulation</li>
+                        <li>Any live cell with two or three live neighbors lives on to the next generation</li>
+                            <li>Any live cell with more than three live neighbors dies, as if by overpopulation</li>
+                                <li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction</li></ul>
+                <Game />
+            </div>
+        );
+    }
 }
-
 export default App;
